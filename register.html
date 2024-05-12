@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - FlavorQuest</title>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Register for FlavorQuest</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="active">Register</a>
+            <a href="discoverFlavour.html">Discover Flavours</a>
+        </nav>
+        <button class ="toggle" id="toggleContrast">Toggle High Contrast</button>
+    </header>
+    <main>
+        <form id="registerForm">
+            <h2>Sign Up</h2>
+            <div class="input-group">
+                <i class="fa fa-user icon"></i>
+                <input type="text" id="name" name="name" required placeholder="Name">
+            </div>
+            <div class="input-group">
+                <i class="fa fa-envelope icon"></i>
+                <input type="email" id="email" name="email" required placeholder="Email">
+            </div>
+            <div class="input-group">
+                <i class="fa fa-lock icon"></i>
+                <input type="password" id="password" name="password" required placeholder="Password">
+                <i class="fa fa-eye icon-eye" id="togglePassword" onclick="togglePasswordVisibility('password', 'togglePassword')"></i>
+            </div>
+            
+            <div class="input-group">
+                <i class="fa fa-lock icon"></i>
+                <input type="password" id="ConfirmPassword" name="ConfirmPassword" required placeholder="Confirm Password">
+                <i class="fa fa-eye icon-eye" id="toggleConfirmPassword" onclick="togglePasswordVisibility('ConfirmPassword', 'toggleConfirmPassword')"></i>
+            </div>
+            <p id="passwordError" class="error-message" style="display:none; color:red;">Passwords do not match.</p>
+            
+            <button class="button2" type="submit">Register</button>
+        </form>
+        
+        
+
+        <div id="registrationModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Registration Successful!</h2>
+                <p>Welcome to FlavorQuest! Your account has been created.</p>
+                <button class ="button2" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+        
+    </main>
+    <script src="js/register.js"></script>
+</body>
+</html>

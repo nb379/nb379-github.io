@@ -1,0 +1,202 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #00458b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background-color: #003366;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* make space for icon */
+    box-sizing: border-box;
+}
+
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #555;
+}
+.icon-eye {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #555;
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    
+}
+   
+.error-message {
+    color: red; 
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+
+
+.button2 {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #007bff;;
+    border: none;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: #0056b3;
+}
+
+
+
+.active {
+    background-color: #003366;
+    color: #fff; 
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.high-contrast {
+    background-color: black;
+    color: white;
+}
+
+.high-contrast header, .high-contrast nav a {
+    background-color: #000;
+    color: #FFF;
+}
+
+.high-contrast button {
+    background-color: #FFF;
+    color: #000;
+    border: 1px solid #FFF;
+}
+
+.high-contrast img {
+    filter: grayscale(100%); 
+}
+
+.high-contrast .active{
+    background-color: #272323;
+
+}
+
+
+.high-contrast h1{
+    color: #ffffff;
+}
+
+button.button2:hover {
+    background-color: #0056b3;
+}
+
+.toggle{
+    background-color: #378f9e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+}
+
+.high-contrast .button2{
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #000000;;
+    border: none;
+    cursor: pointer;
+
+}
+
+.high-contrast p, h2{
+    color : #000000
+}
+
+.high-contrast header{
+    border: 1px solid rgb(255, 255, 255); 
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Flavours - FlavorQuest</title>
+    <link rel="stylesheet" href="css/discoverFlavour.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>Discover Your Favourite Flavours</h1>
+        <nav>
+            <a href="index.html" >Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="discoverFlavour.html" class="active">Discover Flavours</a>
+        </nav>
+        <button class ="toggle" id="toggleContrast">Toggle High Contrast</button>
+    </header>
+    <main>
+        <form id="flavourForm">
+            <br>
+            <label for="flavourSelect">Choose a flavour:</label>
+
+            <select id="flavourSelect">
+                <option value="">Select Flavour</option>
+                <option value="spicy">Spicy</option>
+                <option value="sweet">Sweet</option>
+                <option value="tangy">Tangy</option>
+            </select><br><br/>
+            
+            <fieldset>
+                <legend>Dietary Restrictions</legend>
+                <label><input type="checkbox" name="diet" value="vegetarian"> Vegetarian</label>
+                <label><input type="checkbox" name="diet" value="vegan"> Vegan</label>
+                <label><input type="checkbox" name="diet" value="gluten-free"> Gluten-Free</label>
+            </fieldset>
+            <button class ="button2" type="button" onclick="discoverFlavours()">Find Restaurants</button>
+        </form>
+
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('infoModal')">&times;</span>
+                <h2 class ="h3-2" id="infoTitle">Restaurant Info</h2>
+                <p id="infoText"></p> 
+            </div>
+        </div>
+       
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('bookingModal')">&times;</span>
+        <h2 class="h3-2">Book Your Visit at <span id="restaurantName"></span></h2>
+        <form id="bookingForm" onsubmit="confirmBooking(event)">
+            <label for="bookingDate">Date:</label>
+            <input type="date" id="bookingDate" name="bookingDate" min="{{today's date}}" required>
+            <label for="bookingTime">Time:</label>
+            <select id="bookingTime" name="bookingTime">
+                <option value="14:00">2:00 PM</option>
+                <option value="16:00">4:00 PM</option>
+                <option value="18:00">6:00 PM</option>
+                <option value="20:00">8:00 PM</option>
+            </select>
+            <button class ="button2" type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+        <div id="bookingReceipt" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bookingReceipt')">&times;</span>
+                <h2 class ="h3-2">Booking Confirmation</h2>
+                <p class ="h3-2" id="receiptDetails"></p>
+                <button class = "button2" onclick="modifyBooking()">Modify Booking</button>
+            </div>
+        </div>
+        
+        <div class="discover-container" id="results">
+        </div>
+        <div id="flavourAlertModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('flavourAlertModal')">&times;</span>
+                <p class ="h3-2">Please select a flavour to find restaurants.</p>
+            </div>
+        </div>
+
+        <div id="dietAlertModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('dietAlertModal')">&times;</span>
+                <p class="h3-2">Please select at least one dietary restriction to find matching restaurants.</p>
+            </div>
+        </div>
+        
+    </main>
+    <script src="js/discoverFlavour.js"></script>
+</body>
+</html>

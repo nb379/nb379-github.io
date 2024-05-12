@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FlavorQuest</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Login to FlavorQuest</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="register.html">Register</a>
+            <a href="discoverFlavour.html">Discover Flavours</a>
+        </nav>
+        <button class="toggle" id="toggleContrast">Toggle High Contrast</button>
+    </header>
+    <main>
+        <form id="loginForm">
+            <h2>Login</h2>
+            <div class="input-group">
+                <i class="fa fa-envelope icon"></i>
+                <input type="email" id="email" name="email" required placeholder="Email">
+            </div>
+            <div class="input-group">
+                <i class="fa fa-lock icon"></i>
+                <input type="password" id="password" name="password" required placeholder="Password">
+                <i class="fa fa-eye icon-eye" onclick="togglePasswordVisibility()"></i>
+            </div>
+            <a href="#" onclick="showResetForm()">Forgot Password?</a>
+            <br/><br/>
+            <button class="button2" type="submit">Login</button>
+        </form>
+
+        <div id="resetPasswordModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('resetPasswordModal')">&times;</span>
+                <h2>Reset Password</h2>
+                <p>Please enter your email address to reset your password.</p>
+                <input type="email" id="resetEmail" placeholder="Enter your email">
+                <p id="resetEmailError" class="error" style="color:red;"></p>
+                <button class="button2" onclick="validateAndSendResetLink()">Send Reset Link</button>
+            </div>
+        </div>
+
+                
+        <div id="emailSentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('emailSentModal')">&times;</span>
+                <h2>Email Sent!</h2>
+                <p id="emailSentMessage"></p>
+                <button class="button2" onclick="closeModal('emailSentModal')">Close</button>
+            </div>
+        </div>
+
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('loginModal')">&times;</span>
+                <h2>Login Successful!</h2>
+                <p>Welcome back! You are now logged in.</p>
+                <button class="button2" onclick="closeModal('loginModal')">Close</button>
+            </div>
+        </div>
+    </main>
+    <script src="js/login.js"></script>
+</body>
+</html>
